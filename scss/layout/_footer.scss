@@ -1,0 +1,61 @@
+.footer {
+  font-size: 2.4rem;
+  text-align: center;
+  color: $second-color;
+
+  & > * {
+    margin: 20px 0;
+  }
+
+  .copyright {
+    color: $third-color;
+    font-size: 0.5em;
+  }
+
+  .social{
+    display: inline-block;
+    background: url("../img/icons.png") no-repeat;
+    width: 37px;
+    height: 31px;
+    overflow: hidden;
+    text-indent: -99999px;
+    margin: 0 15px;
+
+    &.facebook {
+      background-position: 0 2px;
+      margin-right: 0;
+    }
+    &.twitter {
+      background-position: 0 -30px;
+    }
+    &.gplus {
+      background-position: 0 -62px;
+    }
+    &.pinterest {
+      background-position: 0 -93px;
+    }
+  }
+}
+
+.social-links {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px){
+  .footer {
+    text-align: left;
+    padding-left: 0;
+    position: relative;
+
+    .social {
+      margin: 0 10px;
+    }
+  }
+
+
+  .social-links {
+    position: absolute;
+    top: 15px;
+    right: 0;
+  }
+}

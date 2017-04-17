@@ -1,0 +1,228 @@
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font: 5rem Lato;
+  width: 100%;
+  height: auto;
+
+  span {
+    font: 2.5rem "Nixie One";
+    text-transform: uppercase;
+    display: block;
+    color: $navbar-default-brand-span-color;
+  }
+}
+
+.navbar-toggle {
+  width: 50px;
+  height: 50px;
+  padding: 9px 16px;
+  margin-top: 15px;
+
+  .icon-bar {
+    transition: 300ms ease-in-out;
+    position: relative;
+    width: 18px;
+    height: 4px;
+
+    &:nth-child(2){
+      transform: rotate(45deg);
+      width: 30px;
+      top: 8px;
+      left: -7px;
+    }
+
+    &:nth-child(3){
+      opacity: 0;
+    }
+
+    &:last-child{
+      transform: rotate(-45deg);
+      width: 30px;
+      left: -7px;
+      top: -8px;
+    }
+  }
+
+  &.collapsed .icon-bar {
+    transform: rotate(0deg);
+    width: 18px;
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+
+  &:hover,
+  &:focus {
+    background: lighten($brand-color, 5%);
+    border-color: $second-color;
+    .icon-bar{
+      background-color: $second-color;
+    }
+  }
+}
+
+.navbar-default {
+  .navbar-toggle {
+    background-color: darken($brand-color, 5%);
+  }
+
+  .navbar-nav {
+    border: 1px solid $second-color;
+    background-color: $brand-color;
+    opacity: 0.9;
+    margin: 0 15px;
+    width: 100%;
+
+    & > li > a{
+      @include navbar-links;
+      padding-top: 15px;
+
+
+      &:hover{
+        background-color: $second-color;
+      }
+
+      &.parent-link {
+        margin-right: 49px;
+      }
+    }
+
+    li {
+      border-bottom: 1px solid $second-color;
+      height: 49px;
+
+      &.with-submenu {
+        height: auto;
+        min-height: 50px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.submenu {
+  border-top: 1px solid $second-color;
+  display: none;
+  width: 100%;
+  li{
+    @include navbar-links;
+    padding-top: 2px;
+
+    & > a {
+      padding-left: 30px;
+      color: $navbar-default-link-color;
+    }
+  }
+
+  &.open {
+    display: block;
+  }
+}
+
+
+.navbar-collapse {
+  overflow: hidden;
+  position: absolute;
+  z-index: $zindex-navbar;
+  width: 100%;
+  top: 70px;
+}
+
+
+.dropdown-icon {
+  width: 49px;
+  height: 49px;
+  float: right;
+  margin-top: -49px;
+  border-left: 1px solid $second-color;
+  padding: 0;
+  cursor: pointer;
+  background: url('../img/mobile/mobile-expand.png') no-repeat;
+}
+
+
+
+.selected {
+  color: $second-color !important;
+}
+
+@media screen and (min-width: 768px) {
+
+  .navbar-default {
+    .nav{
+      border: none;
+      background: transparent;
+      opacity: 1;
+
+      li {
+        border: none;
+        background: transparent;
+        min-width: 20%;
+
+        a {
+          text-align: center;
+
+          &:hover {
+            background: transparent;
+          }
+
+          &.parent-link {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .navbar-collapse {
+      position: relative;
+      top: 0;
+    }
+  }
+
+
+
+  .dropdown-icon {
+    display: none;
+  }
+
+  .parent-link {
+    margin: 0;
+  }
+
+  .with-submenu {
+    margin: 0;
+    position: relative;
+
+    &:hover .submenu {
+      display: block;
+
+      & li a{
+        padding: 15px 0;
+        background: $brand-color;
+        border-top: 1px solid $accent-color;
+
+        &:hover {
+          color: $navbar-default-link-hover-color;
+        }
+      }
+    }
+  }
+
+  .submenu {
+    width: 100%;
+    position: absolute;
+    top: 48px;
+    padding-top: 1px;
+  }
+}
+

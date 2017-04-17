@@ -1,0 +1,29 @@
+{
+  "name": "template-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lilic",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "bootstrap-sass": "^3.3.7",
+    "browser-sync": "^2.18.8",
+    "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-cli": "^1.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^6.3.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-util": "^3.0.8",
+    "pug": "^2.0.0-beta11"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1"
+  }
+}

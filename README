@@ -1,0 +1,7 @@
+This is the default position to start with a new site template.
+For everithing to work, you have to run from command line: 
+	- install node js (if not installed)
+	- install bower globaly (if not installed) by running "npm i -g bower"
+	
+1. npm i
+2. bower install
