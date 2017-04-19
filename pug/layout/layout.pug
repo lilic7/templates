@@ -1,3 +1,5 @@
+include ../abstract/variables
+include ../abstract/mixins
 doctype
 html(lang="en")
     head
@@ -8,11 +10,11 @@ html(lang="en")
         title template starter
     body
 
-        include header
+        include ../parts/header
 
         block main-content
 
-        include footer
+        include ../parts/footer
 
 
         script(src="assets/jquery/dist/jquery.min.js")

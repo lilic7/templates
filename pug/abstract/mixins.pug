@@ -1,0 +1,37 @@
+mixin logo(text, img, classes, spanText)
+    a.navbar-brand.text-center(class=classes href="/")=text
+        if img
+            img(src="img/"+img)
+        if spanText
+            span=spanText
+
+mixin navbarToggle(toggleID, classes)
+    button.navbar-toggle.collapsed(
+        class=classes
+        type="button"
+        data-toggle="collapse"
+        data-target='#'+toggleID
+        )
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+
+mixin navbarNav
+    ul.nav.navbar-nav
+        each link in links
+            if link.submenu
+                +submenu(link)
+            else
+                li
+                    a(href=link.href)=link.title
+
+mixin submenu(submenu)
+    li.with-submenu
+        a.parent-link(href=submenu.href)=submenu.title
+        span.dropdown-icon
+        ul.nav.submenu
+            each link in submenu.submenu
+                li
+                    a(href=link.href)=link.title
