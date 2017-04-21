@@ -28,4 +28,11 @@
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
 }
-
+//
+//@function social($key){
+//  @if map_has_key($social-sprite, $key){
+//    @return map_get($social-sprite, $key)
+//  }
+//  @warn "Unknown '#{$key}' in $social-sprite";
+//  @return null;
+//}

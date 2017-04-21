@@ -1,49 +1,73 @@
+$margin-top: 15px;
+$toggle-size: 35px;
+$background-color: $brand-color;
+$background-elements: $second-color;
+
+
+$icon-bar-width: 50%;
+$icon-bar-height: 10%;
+$icon-bar-left: 25%;
+
+$icon-bar-transform-width: 80%;
+$icon-bar-transform-left: 10%;
+$icon-bar-transform-vertical: 45%;
+
 .navbar-toggle {
-  background-color: darken($brand-color, 5%);
-  width: 50px;
-  height: 50px;
-  padding: 9px 16px;
-  margin-top: 15px;
+  background-color: darken($background-color, 5%);
+  width: $toggle-size;
+  height: $toggle-size;
+  position: relative;
+  padding: 0;
+  margin-top: $margin-top;
+
+  .icon-bar + .icon-bar {
+    margin-top: $icon-bar-height;
+  }
 
   .icon-bar {
-    transition: 300ms ease-in-out;
-    position: relative;
-    width: 18px;
-    height: 4px;
+    transition: 300ms ease-in-out, position 100ms;
+    height: $icon-bar-height;
+    border-radius: 0;
+    position: absolute;
 
     &:nth-child(2){
       transform: rotate(45deg);
-      width: 30px;
-      top: 8px;
-      left: -7px;
+      transition: transform 300ms;
+      width: $icon-bar-transform-width;
+      top: $icon-bar-transform-vertical;
+      left: $icon-bar-transform-left;
     }
 
     &:nth-child(3){
       opacity: 0;
+      transition: opacity 100ms;
+      left: $icon-bar-transform-left;
     }
 
     &:last-child{
       transform: rotate(-45deg);
-      width: 30px;
-      left: -7px;
-      top: -8px;
+      transition: transform 300ms;
+      width: $icon-bar-transform-width;
+      bottom: $icon-bar-transform-vertical;
+      left: $icon-bar-transform-left;
     }
   }
 
   &.collapsed .icon-bar {
     transform: rotate(0deg);
-    width: 18px;
-    top: 0;
-    left: 0;
+    width: $icon-bar-width;
+    height: $icon-bar-height;
+    position: relative;
+    left: $icon-bar-left;
     opacity: 1;
   }
 
   &:hover,
   &:focus {
-    background: lighten($brand-color, 5%);
-    border-color: $second-color;
+    background: lighten($background-color, 5%);
+    border-color: $background-elements;
     .icon-bar{
-      background-color: $second-color;
+      background-color: $background-elements;
     }
   }
 }
